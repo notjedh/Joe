@@ -1,10 +1,10 @@
 /**
-* @name         BDPluginButton
-* @description  Adds a simple button that leads straight to the BetterDiscord plugins settings page
-* @version      1.0.0
-* @author       NotJedH
-* @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
-*/
+ * @name         BDPluginButton
+ * @description  Adds a simple button that leads straight to the BetterDiscord plugins settings page
+ * @version      1.0.0
+ * @author       NotJedH
+ * @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
+ */
 
 (() => {
     const createButton = () => {
@@ -36,7 +36,11 @@
                 observer.observe(document.body, { childList: true, subtree: true });
             }
         });
-        document.body.appendChild(button);
+
+        const appMount = document.querySelector('#app-mount');
+        if (appMount) {
+            appMount.appendChild(button);
+        }
     };
 
     const waitForDiscord = () => {
@@ -50,4 +54,3 @@
 
     waitForDiscord();
 })();
-
