@@ -5,21 +5,6 @@
  * @author       NotJedH
  * @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
  */
-// ==UserScript==
-// @name         BDPluginButton
-// @description  Adds a simple button that leads straight to the BetterDiscord plugins settings page
-// @version      1.0.0
-// @author       NotJedH
-// @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
-// ==/UserScript==
-
-// ==UserScript==
-// @name         BDPluginButton
-// @description  Adds a simple button that leads straight to the BetterDiscord plugins settings page
-// @version      1.0.0
-// @author       NotJedH
-// @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
-// ==/UserScript==
 
 (() => {
     const buttonId = 'bd-plugin-button';
