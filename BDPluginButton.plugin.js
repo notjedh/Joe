@@ -7,7 +7,7 @@
  */
 
 (() => {
-    const createButton = () => {
+    function createButton() {
         const button = document.createElement('button');
         button.innerText = 'BD';
         button.style.position = 'fixed';
@@ -41,16 +41,17 @@
         if (appMount) {
             appMount.appendChild(button);
         }
-    };
+    }
 
-    const waitForDiscord = () => {
+    function waitForDiscord() {
         const settingsButton = document.querySelector('[aria-label="User Settings"]');
         if (settingsButton) {
             createButton();
         } else {
             setTimeout(waitForDiscord, 1000);
         }
-    };
+    }
 
     waitForDiscord();
 })();
+
