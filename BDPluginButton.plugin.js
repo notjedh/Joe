@@ -5,15 +5,24 @@
  * @author       NotJedH
  * @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
  */
+// ==UserScript==
+// @name         BDPluginButton
+// @description  Adds a simple button that leads straight to the BetterDiscord plugins settings page
+// @version      1.0.0
+// @author       NotJedH
+// @source       https://raw.githubusercontent.com/notjedh/myBDRepo/main/BDPluginButton.plugin.js
+// ==/UserScript==
 
 (() => {
     function createButton() {
+        const buttonContainer = document.createElement('div');
+        buttonContainer.style.position = 'fixed';
+        buttonContainer.style.bottom = '20px';
+        buttonContainer.style.right = '20px';
+        buttonContainer.style.zIndex = '9999';
+
         const button = document.createElement('button');
         button.innerText = 'BD';
-        button.style.position = 'fixed';
-        button.style.bottom = '20px';
-        button.style.right = '20px';
-        button.style.zIndex = '9999';
         button.style.fontFamily = 'discord';
         button.style.fontSize = '14px';
         button.style.width = '25px';
@@ -22,6 +31,10 @@
         button.style.backgroundColor = '#7289da';
         button.style.color = '#fff';
         button.style.border = 'none';
+        button.style.display = 'flex';
+        button.style.alignItems = 'center';
+        button.style.justifyContent = 'center';
+
         button.addEventListener('click', () => {
             const settingsButton = document.querySelector('[aria-label="User Settings"]');
             if (settingsButton) {
@@ -37,9 +50,11 @@
             }
         });
 
+        buttonContainer.appendChild(button);
+
         const appMount = document.querySelector('#app-mount');
         if (appMount) {
-            appMount.appendChild(button);
+            appMount.appendChild(buttonContainer);
         }
     }
 
